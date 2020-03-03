@@ -11,6 +11,9 @@
     box-sizing: border-box;
     transition: transform 0.3s ease-out ;
 }
+.DesktopOnly{
+    display: none !important;
+}
 
 @media (min-width: 500px){
     .SideDrawer{
@@ -23,8 +26,8 @@
 .Close{
     transform: translateX(-100%);
 }
-@media(max-width: 499px){
+/* @media(max-width: 500px){
     .DesktopOnly {
-        display: none;
+        display: none !important;
     }
-}
+} */

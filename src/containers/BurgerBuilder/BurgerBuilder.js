@@ -3,7 +3,7 @@ import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
-import Aux from "../../hoc/Aux";
+import Aux from "../../hoc/Aux/Aux";
 
 const INGREDIENT_PRICE = {
     bacon: 0.7,
@@ -86,7 +86,7 @@ class BurgerBuilder extends Component {
                     show={this.state.purchasing}
                     modalClosed={this.purchaseCloseHandler}
                 >
-                    <OrderSummary
+                    <OrderSummary                                   // here we use componentDidUpdate lifecycle method because we only want want to update(or rerender order summary componenet we don't want to re render the modal that can be used or wrap ordersummary component)
                         ingredients={this.state.ingredients}
                         purchaseCancel={this.purchaseCloseHandler}
                         price={this.state.totalPrice}
