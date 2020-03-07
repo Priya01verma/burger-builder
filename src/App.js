@@ -1,15 +1,22 @@
-import React from 'react';
+import React from "react";
 import Layout from "../src/hoc/layout/Layout";
 import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
+import Checkout from "./containers/Checkout/Checkout";
+import { BrowserRouter, Route } from "react-router-dom";
 function App() {
-  return (
-    <div>
-      <Layout>
-        {/* <p>dppppkkfgkdhfkdhfgkhfd</p> */}
-        <BurgerBuilder />
-      </Layout>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div>
+                <Layout>
+                  <Route exact path = "/" component={BurgerBuilder}/>
+                  <Route exact path = "/checkout" component={Checkout}/>
+                    {/* <p>dppppkkfgkdhfkdhfgkhfd</p> */}
+                    {/* <BurgerBuilder />
+                    <Checkout /> */}
+                </Layout>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

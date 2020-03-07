@@ -82,24 +82,25 @@ class BurgerBuilder extends Component {
     };
     purchaseContinueHandler = () => {
         // alert("To continue!!!!");
-        this.setState({loading: true})
-        const order = {
-            ingredients: this.state.ingredients,
-            totalPrice: this.state.totalPrice,
-            customer: {
-                name: "priya verma",
-                contact: "sdljfsdljfdl"
-            },
-            email: "abc@gmail.com"
-        };
-        axios
-            .post("order.json", order)
-            .then(response => {
-                this.setState({loading: false, purchasing: false})
-            })
-            .catch(err => {
-                this.setState({loading: false, purchasing: false})
-            });
+        // this.setState({loading: true})
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     totalPrice: this.state.totalPrice,
+        //     customer: {
+        //         name: "priya verma",
+        //         contact: "sdljfsdljfdl"
+        //     },
+        //     email: "abc@gmail.com"
+        // };
+        // axios
+        //     .post("order.json", order)
+        //     .then(response => {
+        //         this.setState({loading: false, purchasing: false})
+        //     })
+        //     .catch(err => {
+        //         this.setState({loading: false, purchasing: false})
+        //     });
+        this.props.history.push("/checkout");
     };
     render() {
         const disabledInfo = {
